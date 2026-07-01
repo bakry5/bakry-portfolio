@@ -4,7 +4,7 @@ import { FiArrowDown, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
 
 const socials = [
   { icon: FiGithub, href: 'https://github.com/bakry5', label: 'GitHub' },
-  { icon: FiLinkedin, href: 'https://www.linkedin.com/in/mohamed-medhat-3a95b830a/', label: 'LinkedIn' },
+  { icon: FiLinkedin, href: 'https://www.linkedin.com/in/mohamed-medhat-3a95b830a', label: 'LinkedIn' },
 ]
 
 const stagger = {

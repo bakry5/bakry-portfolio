@@ -2,9 +2,9 @@
 import { FiGithub, FiLinkedin, FiTwitter, FiHeart } from 'react-icons/fi'
 
 const socials = [
-  { icon: FiGithub, href: 'https://github.com' },
-  { icon: FiLinkedin, href: 'https://linkedin.com' },
-  { icon: FiTwitter, href: 'https://twitter.com' },
+  { icon: FiGithub, href: 'https://github.com/bakry5' },
+  { icon: FiLinkedin, href: 'https://www.linkedin.com/in/mohamed-medhat-3a95b830a' },
+  
 ]
 
 export default function Footer() {
