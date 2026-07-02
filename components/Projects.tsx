@@ -42,19 +42,18 @@ const projects = [
     live: 'https://cloud-hosting-nextjs-inky.vercel.app',
     featured: false,
     stat: 'SEO optimized',
-  },
-  {
-    id: 4,
-    title: 'REST API blog',
-    description:
-      'Production-ready Node.js/Express REST API starter with auth, rate limiting, validation .',
-    tags: ['Node.js', 'Express', 'MongoDB', , 'JWT'],
-    category: 'backend',
-    color: '#fbbf24',
-    github: 'https://github.com',
-   
-    featured: false,
-    stat: '500+ GitHub stars',
+  },{
+   id: 4,
+    title: 'Netflix Clone',
+    description:" Netflix clone built with React.js, Tailwind CSS,Zustand, and TMDB API. It features a responsive design ",
+     
+    tags: ['React', 'Tailwind CSS', 'Zustand', 'TMDB'],
+    category: 'frontend',
+    color: '#00d4aa',
+    github: 'https://github.com/bakry5/Netflex-clone--react-',
+    live: 'https://netflex-clone-react-pink.vercel.app',
+    featured: true,
+    stat: 'Real-time sync',
   },
   {
     id: 5,
@@ -82,7 +81,20 @@ const projects = [
     featured: false,
     stat: '200+ templates used',
   },
-  
+   
+  {
+    id: 7,
+    title: 'E-commerce ',
+    description:
+      'E-commerce backend built with Node.js, Express, and MongoDB. Features JWT authentication, product management, and order processing.',
+    tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
+    category: 'backend',
+    color: '#fbbf24',
+    github: 'https://github.com/bakry5/E-commece-backend-',
+   
+    featured: false,
+    stat: '500+ GitHub stars',
+  },
 ]
 
 const categories = ['all', 'fullstack', 'frontend', 'backend']
