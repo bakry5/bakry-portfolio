@@ -15,7 +15,7 @@ const projects = [
     github: 'https://github.com/bakry5/store-management-system-with-Next.js-',
     live: 'https://store-management-system-with-next-j.vercel.app',
     featured: true,
-    stat: '10k+ orders processed',
+    stat: "",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const projects = [
     github: 'https://github.com/bakry5/chat-backend',
     live: 'https://chat-frontend-react-three.vercel.app',
     featured: true,
-    stat: 'Real-time sync',
+    stat: "",
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const projects = [
     github: 'https://github.com/bakry5/cloud-hosting-nextjs',
     live: 'https://cloud-hosting-nextjs-inky.vercel.app',
     featured: false,
-    stat: 'SEO optimized',
+    stat: "",
   },{
    id: 4,
     title: 'Netflix Clone',
@@ -53,7 +53,7 @@ const projects = [
     github: 'https://github.com/bakry5/Netflex-clone--react-',
     live: 'https://netflex-clone-react-pink.vercel.app',
     featured: true,
-    stat: 'Real-time sync',
+    stat: "",
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ const projects = [
     github: 'https://github.com/bakry5/architect-portfolio-frontend',
     live: 'https://architect-portfolio-ma.vercel.app',
     featured: false,
-    stat: '200+ templates used',
+    stat: "",
   },
    {
     id: 6,
@@ -79,7 +79,7 @@ const projects = [
     github: 'https://github.com/bakry5/auth-master-frontend-react-',
     live: 'https://auth-master-frontend-react.vercel.app',
     featured: false,
-    stat: '200+ templates used',
+    stat: "",
   },
    
   {
@@ -93,7 +93,7 @@ const projects = [
     github: 'https://github.com/bakry5/E-commece-backend-',
    
     featured: false,
-    stat: '500+ GitHub stars',
+    stat: '',
   },
 ]
 
