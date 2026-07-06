@@ -5,7 +5,9 @@ import {
   SiReact, SiNextdotjs, SiTypescript, SiJavascript,
   SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss,
   SiGit, SiDocker, SiPostman, SiFigma,
-  SiRedux, SiGraphql, SiFirebase, SiVercel
+  SiRedux, SiGraphql, SiFirebase, SiVercel,
+  SiBootstrap,
+  SiCloudinary
 } from 'react-icons/si'
 
 const skillGroups = [
@@ -19,6 +21,8 @@ const skillGroups = [
       { name: 'JavaScript', icon: SiJavascript, level: 95 },
       { name: 'Tailwind CSS', icon: SiTailwindcss, level: 92 },
       { name: 'Redux', icon: SiRedux, level: 80 },
+{ name: 'Bootstrap', icon: SiBootstrap, level: 75 },
+
     ],
   },
   {
@@ -38,6 +42,9 @@ const skillGroups = [
       { name: 'Git & GitHub', icon: SiGit, level: 90 },
       { name: 'Postman', icon: SiPostman, level: 88 },
       { name: 'Vercel', icon: SiVercel, level: 90 },
+     
+{ name: 'Cloudinary', icon: SiCloudinary, level: 85 },
+
     
     ],
   },

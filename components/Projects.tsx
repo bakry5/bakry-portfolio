@@ -4,21 +4,49 @@ import { useRef, useState } from 'react'
 import { FiExternalLink, FiGithub } from 'react-icons/fi'
 
 const projects = [
+   {
+  id: 1,
+  title: 'AI Resume ',
+  description:
+    'Full-stack AI-powered resume builder with real-time PDF generation, secure JWT authentication, and MongoDB storage. Built with React.js, Tailwind CSS, and Node.js.',
+  category: 'fullstack',
+  color: '#22c55e',
+  github: '',
+  live: '',
+  incoming: true,
+  stat: "",
+},
+
+    {
+  id: 2,
+  title: 'CareHub',
+  description:
+    'Full-stack healthcare platform built as graduation project at ITI. Features secure JWT authentication, role-based access control, and end-to-end MERN architecture.',
+  tags: ['Next.js', 'Node.js', 'MongoDB', 'JWT'],
+  category: 'fullstack',
+  color: '#22c55e',
+  github: 'https://github.com/honda4coding/carehub',
+  live: 'https://carehub-two.vercel.app',
+  incoming: false,
+  stat: "",
+},
+  
+  
   {
-    id: 1,
+    id: 3,
     title: 'ShopFlow E-Commerce',
     description:
-      'Full-featured e-commerce platform with real-time inventory, admin dashboard, and JWT authentication. Built for scale with Next.js SSR and MongoDB aggregations.',
+      'Full-incoming e-commerce platform with real-time inventory, admin dashboard, and JWT authentication. Built for scale with Next.js SSR and MongoDB aggregations.',
     tags: ['Next.js', 'MongoDB', 'Redux', ],
     category: 'fullstack',
     color: '#6c47ff',
     github: 'https://github.com/bakry5/store-management-system-with-Next.js-',
     live: 'https://store-management-system-with-next-j.vercel.app',
-    featured: true,
+    incoming: false,
     stat: "",
   },
   {
-    id: 2,
+    id: 4,
     title: 'Chat App',
     description:
       'Real-time chat app with rooms, images sharing, emoji support, and message history built with Socket.io.',
@@ -27,11 +55,11 @@ const projects = [
     color: '#00d4aa',
     github: 'https://github.com/bakry5/chat-backend',
     live: 'https://chat-frontend-react-three.vercel.app',
-    featured: true,
+    incoming: false,
     stat: "",
   },
   {
-    id: 3,
+    id: 5,
     title: 'CloudHosting Platform',
     description:
       'cloud hosting for docunemts ',
@@ -40,10 +68,10 @@ const projects = [
     color: '#ff6b6b',
     github: 'https://github.com/bakry5/cloud-hosting-nextjs',
     live: 'https://cloud-hosting-nextjs-inky.vercel.app',
-    featured: false,
+    incoming: false,
     stat: "",
   },{
-   id: 4,
+   id: 6,
     title: 'Netflix Clone',
     description:" Netflix clone built with React.js, Tailwind CSS,Zustand, and TMDB API. It features a responsive design ",
      
@@ -52,11 +80,11 @@ const projects = [
     color: '#00d4aa',
     github: 'https://github.com/bakry5/Netflex-clone--react-',
     live: 'https://netflex-clone-react-pink.vercel.app',
-    featured: true,
+    incoming: false,
     stat: "",
   },
   {
-    id: 5,
+    id: 7,
     title: ' Architect Portfolio',
     description:
       'Advanced MERN Auth Course: Email Verification, Password Recovery, and Welcome Emails with Nodemailer and JWT.',
@@ -65,11 +93,11 @@ const projects = [
     color: '#a78bfa',
     github: 'https://github.com/bakry5/architect-portfolio-frontend',
     live: 'https://architect-portfolio-ma.vercel.app',
-    featured: false,
+    incoming: false,
     stat: "",
   },
    {
-    id: 6,
+    id: 8,
     title: ' Master Auth',
     description:
       'Open-source Next.js portfolio template with Framer Motion animations and Tailwind CSS.',
@@ -78,12 +106,12 @@ const projects = [
     color: '#a78bfa',
     github: 'https://github.com/bakry5/auth-master-frontend-react-',
     live: 'https://auth-master-frontend-react.vercel.app',
-    featured: false,
+    incoming: false,
     stat: "",
   },
    
   {
-    id: 7,
+    id: 9,
     title: 'E-commerce ',
     description:
       'E-commerce backend built with Node.js, Express, and MongoDB. Features JWT authentication, product management, and order processing.',
@@ -92,7 +120,7 @@ const projects = [
     color: '#fbbf24',
     github: 'https://github.com/bakry5/E-commece-backend-',
    
-    featured: false,
+    incoming: false,
     stat: '',
   },
 ]
@@ -163,7 +191,7 @@ export default function Projects() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               className={`relative rounded-2xl border border-border bg-surface/40 p-6 card-hover group overflow-hidden ${
-                project.featured ? 'ring-1 ring-accent/20' : ''
+                project.incoming ? 'ring-1 ring-accent/20' : ''
               }`}
             >
               {/* Glow on hover */}
@@ -172,11 +200,11 @@ export default function Projects() {
                 style={{ background: `radial-gradient(circle at 50% 0%, ${project.color}10, transparent 60%)` }}
               />
 
-              {/* Featured badge */}
-              {project.featured && (
+              {/* incoming badge */}
+              {project.incoming && (
                 <div className="absolute top-4 right-4">
                   <span className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-accent/10 text-accent border border-accent/20">
-                    featured
+                    incoming
                   </span>
                 </div>
               )}
@@ -193,17 +221,6 @@ export default function Projects() {
                   ↗ {project.stat}
                 </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-5">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 text-[11px] font-mono border border-border bg-bg rounded text-subtle"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
 
                 {/* Links */}
                 <div className="flex items-center gap-3">
