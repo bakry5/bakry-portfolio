@@ -1,7 +1,7 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { FiExternalLink, FiGithub } from 'react-icons/fi'
+import { FiArrowUpRight, FiGithub } from 'react-icons/fi'
 
 const projects = [
    {
@@ -11,9 +11,9 @@ const projects = [
     'Full-stack AI-powered resume builder with real-time PDF generation, secure JWT authentication, and MongoDB storage. Built with React.js, Tailwind CSS, and Node.js.',
   category: 'fullstack',
   color: '#22c55e',
-  github: '',
-  live: '',
-  incoming: true,
+  github: 'https://github.com/bakry5/ai-resume-react-',
+  live: 'https://ai-resume-b.vercel.app',
+  incoming: false,
   stat: "",
 },
 
@@ -34,16 +34,16 @@ const projects = [
   
   {
     id: 3,
-    title: 'ShopFlow E-Commerce',
+    title: 'ShopFlow',
     description:
       'Full-incoming e-commerce platform with real-time inventory, admin dashboard, and JWT authentication. Built for scale with Next.js SSR and MongoDB aggregations.',
-    tags: ['Next.js', 'MongoDB', 'Redux', ],
+    tags: ['Next.js', 'MongoDB', 'Redux'],
     category: 'fullstack',
-    color: '#6c47ff',
-    github: 'https://github.com/bakry5/store-management-system-with-Next.js-',
+    color: '#d0ff00',
+    github: '',
     live: 'https://store-management-system-with-next-j.vercel.app',
     incoming: false,
-    stat: "",
+    stat: "open source",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const projects = [
       'Real-time chat app with rooms, images sharing, emoji support, and message history built with Socket.io.',
     tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
     category: 'fullstack',
-    color: '#00d4aa',
+    color: '#f59e0b',
     github: 'https://github.com/bakry5/chat-backend',
     live: 'https://chat-frontend-react-three.vercel.app',
     incoming: false,
@@ -60,24 +60,24 @@ const projects = [
   },
   {
     id: 5,
-    title: 'CloudHosting Platform',
+    title: 'CloudHosting',
     description:
-      'cloud hosting for docunemts ',
-    tags: ['Next.js', 'prisma', 'Tailwind'],
+      'Cloud hosting for documents platform with file management and sharing.',
+    tags: ['Next.js', 'Prisma', 'Tailwind'],
     category: 'fullstack',
-    color: '#ff6b6b',
+    color: '#ef4444',
     github: 'https://github.com/bakry5/cloud-hosting-nextjs',
     live: 'https://cloud-hosting-nextjs-inky.vercel.app',
     incoming: false,
     stat: "",
-  },{
-   id: 6,
+  },
+  {
+    id: 6,
     title: 'Netflix Clone',
-    description:" Netflix clone built with React.js, Tailwind CSS,Zustand, and TMDB API. It features a responsive design ",
-     
+    description:"Netflix clone built with React.js, Tailwind CSS, Zustand, and TMDB API. Responsive design.",
     tags: ['React', 'Tailwind CSS', 'Zustand', 'TMDB'],
     category: 'frontend',
-    color: '#00d4aa',
+    color: '#d0ff00',
     github: 'https://github.com/bakry5/Netflex-clone--react-',
     live: 'https://netflex-clone-react-pink.vercel.app',
     incoming: false,
@@ -85,10 +85,10 @@ const projects = [
   },
   {
     id: 7,
-    title: ' Architect Portfolio',
+    title: 'Architect Portfolio',
     description:
       'Advanced MERN Auth Course: Email Verification, Password Recovery, and Welcome Emails with Nodemailer and JWT.',
-    tags: ['Next.js', 'Node.js',"MongoDB", 'Tailwind'],
+    tags: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind'],
     category: 'fullstack',
     color: '#a78bfa',
     github: 'https://github.com/bakry5/architect-portfolio-frontend',
@@ -98,10 +98,10 @@ const projects = [
   },
    {
     id: 8,
-    title: ' Master Auth',
+    title: 'Master Auth',
     description:
-      'Open-source Next.js portfolio template with Framer Motion animations and Tailwind CSS.',
-    tags: ['React', 'Node.js',"MongoDB", 'Tailwind'],
+      'Open-source authentication system with email verification and password recovery built on Next.js and Node.js.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
     category: 'fullstack',
     color: '#a78bfa',
     github: 'https://github.com/bakry5/auth-master-frontend-react-',
@@ -109,17 +109,16 @@ const projects = [
     incoming: false,
     stat: "",
   },
-   
+  
   {
     id: 9,
-    title: 'E-commerce ',
+    title: 'E-commerce API',
     description:
       'E-commerce backend built with Node.js, Express, and MongoDB. Features JWT authentication, product management, and order processing.',
     tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
     category: 'backend',
-    color: '#fbbf24',
+    color: '#f59e0b',
     github: 'https://github.com/bakry5/E-commece-backend-',
-   
     incoming: false,
     stat: '',
   },
@@ -135,27 +134,30 @@ export default function Projects() {
   const filtered = active === 'all' ? projects : projects.filter((p) => p.category === active)
 
   return (
-    <section id="projects" className="py-28 relative">
-      <div className="orb w-[350px] h-[350px] bg-accent-3/10 top-0 right-[-80px]" />
+    <section id="projects" className="py-32 relative">
+      <div className="orb w-[400px] h-[400px] bg-accent/5 top-0 right-[-150px]" />
 
-      <div ref={ref} className="max-w-6xl mx-auto px-6">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-10">
+        {/* Section label */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          className="flex items-center gap-3 mb-4"
+          transition={{ duration: 0.7 }}
+          className="flex items-center gap-4 mb-20"
         >
-          <span className="text-xs font-mono text-accent tracking-widest uppercase">03 — Projects</span>
-          <div className="h-px w-12 bg-border" />
+          <span className="text-xs font-mono text-accent tracking-[0.4em] uppercase">03 — Projects</span>
+          <div className="h-px w-16 bg-accent/30" />
         </motion.div>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-bold"
+            className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.9] tracking-tight"
           >
-            Selected <span className="text-gradient">Work</span>
+            Selected<br />
+            <span className="text-gradient">Work</span>
           </motion.h2>
 
           {/* Filter */}
@@ -163,16 +165,16 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2"
+            className="flex flex-wrap items-center gap-2"
           >
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-4 py-1.5 rounded-lg text-sm font-medium capitalize transition-all duration-200 ${
+                className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-[0.15em] transition-all duration-300 ${
                   active === cat
-                    ? 'bg-accent text-white'
-                    : 'border border-border text-subtle hover:text-text hover:border-accent/30'
+                    ? 'bg-accent text-bg'
+                    : 'border border-border text-subtle hover:text-text hover:border-accent/40'
                 }`}
               >
                 {cat}
@@ -186,63 +188,71 @@ export default function Projects() {
             <motion.div
               key={project.id}
               layout
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className={`relative rounded-2xl border border-border bg-surface/40 p-6 card-hover group overflow-hidden ${
-                project.incoming ? 'ring-1 ring-accent/20' : ''
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.6, delay: i * 0.06 }}
+              className={`group relative rounded-2xl border border-border bg-surface/60 p-7 card-hover overflow-hidden ${
+                project.incoming ? 'ring-1 ring-accent/30' : ''
               }`}
             >
               {/* Glow on hover */}
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
-                style={{ background: `radial-gradient(circle at 50% 0%, ${project.color}10, transparent 60%)` }}
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"
+                style={{ background: `radial-gradient(circle at 50% 0%, ${project.color}15, transparent 70%)` }}
               />
 
-              {/* incoming badge */}
-              {project.incoming && (
-                <div className="absolute top-4 right-4">
-                  <span className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-accent/10 text-accent border border-accent/20">
-                    incoming
-                  </span>
-                </div>
-              )}
-
               <div className="relative">
-                {/* Color bar */}
-                <div className="w-8 h-1 rounded-full mb-4" style={{ background: project.color }} />
-
-                <h3 className="font-display font-bold text-text text-lg mb-2">{project.title}</h3>
-                <p className="text-subtle text-sm leading-relaxed mb-4">{project.description}</p>
-
-                {/* Stat */}
-                <div className="text-xs font-mono mb-4" style={{ color: project.color }}>
-                  ↗ {project.stat}
+                {/* Top line */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-10 h-10 rounded-xl border border-border bg-bg flex items-center justify-center" style={{ color: project.color }}>
+                    <FiArrowUpRight size={18} />
+                  </div>
+                  {project.incoming && (
+                    <span className="px-3 py-1 text-[10px] font-mono tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20 uppercase">
+                      Incoming
+                    </span>
+                  )}
                 </div>
 
+                <h3 className="font-display font-extrabold text-text text-xl mb-3 tracking-tight">
+                  {project.title}
+                </h3>
+                <p className="text-subtle text-sm leading-relaxed mb-5">{project.description}</p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags?.map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 text-[10px] font-mono tracking-wider border border-border text-muted rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
                 {/* Links */}
-                <div className="flex items-center gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs text-subtle hover:text-text transition-colors"
-                  >
-                    <FiGithub size={14} />
-                    Code
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs transition-colors"
-                    style={{ color: project.color }}
-                  >
-                    <FiExternalLink size={14} />
-                    Live Demo
-                  </a>
+                <div className="flex items-center gap-4 pt-4 border-t border-border">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-mono tracking-wider text-subtle hover:text-text transition-colors"
+                    >
+                      <FiGithub size={14} />
+                      Code
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-mono tracking-wider text-accent hover:text-accent-2 transition-colors"
+                    >
+                      <FiArrowUpRight size={14} />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -252,17 +262,17 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8 }}
-          className="text-center mt-12"
+          transition={{ delay: 0.7 }}
+          className="text-center mt-14"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/bakry5"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-border bg-surface/40 hover:border-accent/40 text-subtle hover:text-text text-sm rounded-xl transition-all duration-200"
+            className="inline-flex items-center gap-3 px-8 py-4 border border-border text-subtle hover:text-text hover:border-accent/40 text-sm font-mono tracking-wider rounded-full transition-all duration-300"
           >
             <FiGithub size={16} />
-            View all on GitHub
+            View All On GitHub
           </a>
         </motion.div>
       </div>
