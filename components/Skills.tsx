@@ -13,7 +13,7 @@ import {
 const skillGroups = [
   {
     label: 'Frontend',
-    color: '#d8a75c',
+    color: '#6c47ff',
     skills: [
       { name: 'React.js', icon: SiReact, level: 95 },
       { name: 'Next.js', icon: SiNextdotjs, level: 90 },
@@ -27,7 +27,7 @@ const skillGroups = [
   },
   {
     label: 'Backend',
-    color: '#b8432a',
+    color: '#00d4aa',
     skills: [
       { name: 'Node.js', icon: SiNodedotjs, level: 88 },
       { name: 'Express.js', icon: SiExpress, level: 85 },
@@ -37,7 +37,7 @@ const skillGroups = [
   },
   {
     label: 'Tools & DevOps',
-    color: '#6f7a5c',
+    color: '#ff6b6b',
     skills: [
       { name: 'Git & GitHub', icon: SiGit, level: 90 },
       { name: 'Postman', icon: SiPostman, level: 88 },
