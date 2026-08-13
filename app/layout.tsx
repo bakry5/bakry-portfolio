@@ -1,18 +1,19 @@
 import type { Metadata } from 'next'
-import { Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { Fraunces, Manrope, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import WhatsappButton from '../components/WhatsappButton'
 
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700', '900'],
+  style: ['normal', 'italic'],
 })
 
-const dmSans = DM_Sans({
+const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600'],
 })
 
 const jetBrains = JetBrains_Mono({
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${jetBrains.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${manrope.variable} ${jetBrains.variable}`}>
       <body className="bg-bg text-text font-body antialiased">
         {children}
         <WhatsappButton />
