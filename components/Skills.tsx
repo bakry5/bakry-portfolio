@@ -13,7 +13,7 @@ import {
 const skillGroups = [
   {
     label: 'Frontend',
-    color: '#6c47ff',
+    color: '#e8391a',
     skills: [
       { name: 'React.js', icon: SiReact, level: 95 },
       { name: 'Next.js', icon: SiNextdotjs, level: 90 },
@@ -27,7 +27,7 @@ const skillGroups = [
   },
   {
     label: 'Backend',
-    color: '#00d4aa',
+    color: '#1f3b57',
     skills: [
       { name: 'Node.js', icon: SiNodedotjs, level: 88 },
       { name: 'Express.js', icon: SiExpress, level: 85 },
@@ -37,7 +37,7 @@ const skillGroups = [
   },
   {
     label: 'Tools & DevOps',
-    color: '#ff6b6b',
+    color: '#8a6f47',
     skills: [
       { name: 'Git & GitHub', icon: SiGit, level: 90 },
       { name: 'Postman', icon: SiPostman, level: 88 },
@@ -60,12 +60,12 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
         <span className="text-sm text-subtle">{name}</span>
         <span className="text-xs font-mono" style={{ color }}>{level}%</span>
       </div>
-      <div className="h-1 bg-border rounded-full overflow-hidden">
+      <div className="h-1.5 bg-border rounded-none overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : {}}
           transition={{ duration: 1.2, delay, ease: [0.23, 1, 0.32, 1] }}
-          className="h-full rounded-full"
+          className="h-full rounded-none"
           style={{ background: color }}
         />
       </div>
@@ -107,11 +107,11 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15 + gi * 0.1 }}
-              className="p-6 rounded-2xl border border-border bg-surface/40 card-hover"
+              className="p-6 rounded-none border border-border bg-surface/40 card-hover"
             >
               {/* Group header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-2 rounded-full" style={{ background: color }} />
+                <div className="w-2.5 h-2.5 rounded-none" style={{ background: color }} />
                 <h3 className="font-display font-semibold text-text text-sm tracking-wide uppercase">
                   {label}
                 </h3>
@@ -123,7 +123,7 @@ export default function Skills() {
                   <div
                     key={name}
                     title={name}
-                    className="w-8 h-8 flex items-center justify-center rounded-lg border border-border bg-bg text-subtle hover:text-text hover:border-accent/30 transition-all duration-200 cursor-default"
+                    className="w-8 h-8 flex items-center justify-center rounded-none border-2 border-border bg-bg text-subtle hover:text-bg hover:bg-text hover:border-text transition-all duration-150 cursor-default"
                   >
                     <Icon size={15} />
                   </div>

@@ -10,7 +10,7 @@ const projects = [
   description:
     'Full-stack AI-powered resume builder with real-time PDF generation, secure JWT authentication, and MongoDB storage. Built with React.js, Tailwind CSS, and Node.js.',
   category: 'fullstack',
-  color: '#22c55e',
+  color: '#e8391a',
   github:"",//github.com/bakry5/ai-resume-react-',
   live: 'https://ai-resume-b.vercel.app',
   incoming: false,
@@ -24,7 +24,7 @@ const projects = [
     'Full-stack healthcare platform built as graduation project at ITI. Features secure JWT authentication, role-based access control, and end-to-end MERN architecture.',
   tags: ['Next.js', 'Node.js', 'MongoDB', 'JWT'],
   category: 'fullstack',
-  color: '#22c55e',
+  color: '#8a6f47',
   github: 'https://github.com/honda4coding/carehub',
   live: 'https://carehub-two.vercel.app',
   incoming: false,
@@ -39,7 +39,7 @@ const projects = [
       'Full-incoming e-commerce platform with real-time inventory, admin dashboard, and JWT authentication. Built for scale with Next.js SSR and MongoDB aggregations.',
     tags: ['Next.js', 'MongoDB', 'Redux'],
     category: 'fullstack',
-    color: '#d0ff00',
+    color: '#8a6f47',
     github: 'https://github.com/bakry5/store-management-system-with-Next.js-',
     live: 'https://store-management-system-with-next-j.vercel.app',
     incoming: false,
@@ -52,7 +52,7 @@ const projects = [
       'Real-time chat app with rooms, images sharing, emoji support, and message history built with Socket.io.',
     tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
     category: 'fullstack',
-    color: '#f59e0b',
+    color: '#1f3b57',
     github: 'https://github.com/bakry5/chat-backend',
     live: 'https://chat-frontend-react-three.vercel.app',
     incoming: false,
@@ -65,7 +65,7 @@ const projects = [
       'Cloud hosting for documents platform with file management and sharing.',
     tags: ['Next.js', 'Prisma', 'Tailwind'],
     category: 'fullstack',
-    color: '#ef4444',
+    color: '#a13b28',
     github: 'https://github.com/bakry5/cloud-hosting-nextjs',
     live: 'https://cloud-hosting-nextjs-inky.vercel.app',
     incoming: false,
@@ -77,7 +77,7 @@ const projects = [
     description:"Netflix clone built with React.js, Tailwind CSS, Zustand, and TMDB API. Responsive design.",
     tags: ['React', 'Tailwind CSS', 'Zustand', 'TMDB'],
     category: 'frontend',
-    color: '#d0ff00',
+    color: '#8a6f47',
     github: 'https://github.com/bakry5/Netflex-clone--react-',
     live: 'https://netflex-clone-react-pink.vercel.app',
     incoming: false,
@@ -90,7 +90,7 @@ const projects = [
       'Advanced MERN Auth Course: Email Verification, Password Recovery, and Welcome Emails with Nodemailer and JWT.',
     tags: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind'],
     category: 'fullstack',
-    color: '#a78bfa',
+    color: '#1f3b57',
     github: 'https://github.com/bakry5/architect-portfolio-frontend',
     live: 'https://architect-portfolio-ma.vercel.app',
     incoming: false,
@@ -103,7 +103,7 @@ const projects = [
       'Open-source authentication system with email verification and password recovery built on Next.js and Node.js.',
     tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
     category: 'fullstack',
-    color: '#a78bfa',
+    color: '#8a6f47',
     github: 'https://github.com/bakry5/auth-master-frontend-react-',
     live: 'https://auth-master-frontend-react.vercel.app',
     incoming: false,
@@ -117,7 +117,7 @@ const projects = [
       'E-commerce backend built with Node.js, Express, and MongoDB. Features JWT authentication, product management, and order processing.',
     tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
     category: 'backend',
-    color: '#f59e0b',
+    color: '#1f3b57',
     github: 'https://github.com/bakry5/E-commece-backend-',
     incoming: false,
     stat: '',
@@ -171,10 +171,10 @@ export default function Projects() {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-[0.15em] transition-all duration-300 ${
+                className={`px-5 py-2.5 rounded-none border-2 text-xs font-mono uppercase tracking-[0.15em] transition-all duration-200 ${
                   active === cat
-                    ? 'bg-accent text-bg'
-                    : 'border border-border text-subtle hover:text-text hover:border-accent/40'
+                    ? 'bg-accent text-bg border-text'
+                    : 'bg-bg border-border text-subtle hover:text-text hover:border-text'
                 }`}
               >
                 {cat}
@@ -192,24 +192,24 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.6, delay: i * 0.06 }}
-              className={`group relative rounded-2xl border border-border bg-surface/60 p-7 card-hover overflow-hidden ${
-                project.incoming ? 'ring-1 ring-accent/30' : ''
+              className={`group relative rounded-none border-2 border-border bg-bg p-7 card-hover overflow-hidden ${
+                project.incoming ? 'ring-2 ring-accent' : ''
               }`}
             >
-              {/* Glow on hover */}
+              {/* Accent rule on hover — replaces the soft radial-glow overlay */}
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"
-                style={{ background: `radial-gradient(circle at 50% 0%, ${project.color}15, transparent 70%)` }}
+                className="absolute top-0 left-0 right-0 h-1 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
+                style={{ background: project.color }}
               />
 
               <div className="relative">
                 {/* Top line */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-10 h-10 rounded-xl border border-border bg-bg flex items-center justify-center" style={{ color: project.color }}>
+                  <div className="w-10 h-10 rounded-none border-2 border-border bg-bg flex items-center justify-center" style={{ color: project.color }}>
                     <FiArrowUpRight size={18} />
                   </div>
                   {project.incoming && (
-                    <span className="px-3 py-1 text-[10px] font-mono tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20 uppercase">
+                    <span className="px-3 py-1 text-[10px] font-mono tracking-wider rounded-none bg-accent text-bg border border-accent uppercase">
                       Incoming
                     </span>
                   )}
@@ -223,14 +223,14 @@ export default function Projects() {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags?.map((tag) => (
-                    <span key={tag} className="px-2.5 py-1 text-[10px] font-mono tracking-wider border border-border text-muted rounded-full">
+                    <span key={tag} className="px-2.5 py-1 text-[10px] font-mono tracking-wider border-2 border-border text-muted rounded-none">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 {/* Links */}
-                <div className="flex items-center gap-4 pt-4 border-t border-border">
+                <div className="flex items-center gap-4 pt-4 border-t-2 border-border">
                   {project.github && (
                     <a
                       href={project.github}
@@ -269,7 +269,7 @@ export default function Projects() {
             href="https://github.com/bakry5"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 border border-border text-subtle hover:text-text hover:border-accent/40 text-sm font-mono tracking-wider rounded-full transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 border-2 border-text text-subtle hover:text-text hover:border-accent hover:text-accent text-sm font-mono tracking-wider rounded-none transition-all duration-300"
           >
             <FiGithub size={16} />
             View All On GitHub
