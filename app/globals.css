@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-display: 'Syne', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Newsreader', serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -17,69 +17,69 @@ html {
 }
 
 body {
-  background-color: #050508;
-  color: #e8e8f0;
+  background-color: #f1ede2;
+  color: #151310;
   overflow-x: hidden;
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #050508; }
-::-webkit-scrollbar-thumb { background: #6c47ff; border-radius: 2px; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1ede2; }
+::-webkit-scrollbar-thumb { background: #151310; border: 2px solid #f1ede2; }
 
 /* Selection */
-::selection { background: rgba(108, 71, 255, 0.3); color: #fff; }
+::selection { background: #e8391a; color: #f1ede2; }
 
-/* Noise texture overlay */
+/* Paper grain overlay — replaces the generic dark "noise on gradient" look */
 .noise::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.05;
   z-index: 9999;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* Glow utilities */
-.glow-accent { box-shadow: 0 0 40px rgba(108,71,255,0.25); }
-.glow-accent-2 { box-shadow: 0 0 40px rgba(0,212,170,0.2); }
+/* No glow/blur — flat ink marks instead of soft shadows */
+.glow-accent { box-shadow: 4px 4px 0 0 #e8391a; }
+.glow-accent-2 { box-shadow: 4px 4px 0 0 #1f3b57; }
+
+/* Solid ink headline + accent-marker headline — no gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #00d4aa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #151310;
 }
 .text-gradient-2 {
-  background: linear-gradient(135deg, #6c47ff, #00d4aa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #151310;
+  text-decoration: underline;
+  text-decoration-color: #e8391a;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
 }
 
-/* Grid pattern */
+/* Ruled grid — visible print margins, not a soft glowing grid */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(108,71,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108,71,255,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(21,19,16,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,19,16,0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-/* Orb */
+/* Orb blobs are switched off entirely — the soft glowing-gradient-blob
+   is the single most recognizable "AI portfolio" tell, so it's removed
+   rather than recolored. */
 .orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
+  display: none;
 }
 
-/* Card hover */
+/* Card hover — hard offset shadow (print stamp), not a lift+glow */
 .card-hover {
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  border-color: rgba(108,71,255,0.4);
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 0 #151310;
 }
 
 /* Underline animate */
@@ -92,9 +92,9 @@ body {
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 1px;
-  background: #6c47ff;
-  transition: width 0.3s ease;
+  height: 2px;
+  background: #e8391a;
+  transition: width 0.25s ease;
 }
 .link-underline:hover::after { width: 100%; }
 

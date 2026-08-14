@@ -29,7 +29,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-bg/80 backdrop-blur-xl border-b border-border'
+            ? 'bg-bg border-b-2 border-border'
             : 'bg-transparent'
         }`}
       >
@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="#contact"
-              className="px-4 py-2 text-sm font-medium bg-accent hover:bg-accent/90 text-white rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-accent/20"
+              className="px-4 py-2 text-sm font-bold font-mono uppercase tracking-wider bg-accent hover:bg-text text-bg rounded-none transition-all duration-150 border-2 border-text"
             >
               Hire Me
             </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-bg border-t-2 border-border flex flex-col items-center justify-center gap-8"
           >
             {links.map((link, i) => (
               <motion.a
@@ -102,7 +102,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="mt-4 px-8 py-3 bg-accent text-white rounded-xl font-medium"
+              className="mt-4 px-8 py-3 bg-accent text-bg rounded-none font-mono font-bold uppercase tracking-wider border-2 border-text"
               onClick={() => setOpen(false)}
             >
               Hire Me
