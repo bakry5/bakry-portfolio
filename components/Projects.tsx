@@ -47,6 +47,20 @@ const projects = [
   },
   {
     id: 4,
+    title: 'Task Manager',
+    description:
+      'Team task board app — projects, kanban board (To Do / In Progress / Done), role-based permissions (admin/member), and JWT auth via httpOnly cookies. React + Zustand frontend, Express + MongoDB API with automated tests.',
+    tags: ['React', 'Vite', 'Zustand', 'Node.js', 'Express', 'MongoDB'],
+    category: 'fullstack',
+    color: '#e8a23c',
+    github: 'https://github.com/bakry5/task-manager-frontend',
+    githubBackend: 'https://github.com/bakry5/task-manager-backend',
+    live: 'https://task-manager-frontend-ashen-two.vercel.app/',
+    incoming: false,
+    stat: "",
+  },
+  {
+    id: 5,
     title: 'Chat App',
     description:
       'Real-time chat app with rooms, images sharing, emoji support, and message history built with Socket.io.',
@@ -59,7 +73,7 @@ const projects = [
     stat: "",
   },
   {
-    id: 5,
+    id: 6,
     title: 'CloudHosting',
     description:
       'Cloud hosting for documents platform with file management and sharing.',
@@ -72,7 +86,7 @@ const projects = [
     stat: "",
   },
   {
-    id: 6,
+    id: 7,
     title: 'Netflix Clone',
     description:"Netflix clone built with React.js, Tailwind CSS, Zustand, and TMDB API. Responsive design.",
     tags: ['React', 'Tailwind CSS', 'Zustand', 'TMDB'],
@@ -84,7 +98,7 @@ const projects = [
     stat: "",
   },
   {
-    id: 7,
+    id: 8,
     title: 'Architect Portfolio',
     description:
       'Advanced MERN Auth Course: Email Verification, Password Recovery, and Welcome Emails with Nodemailer and JWT.',
@@ -97,7 +111,7 @@ const projects = [
     stat: "",
   },
    {
-    id: 8,
+    id: 9,
     title: 'Master Auth',
     description:
       'Open-source authentication system with email verification and password recovery built on Next.js and Node.js.',
@@ -111,7 +125,7 @@ const projects = [
   },
   
   {
-    id: 9,
+    id: 10,
     title: 'E-commerce API',
     description:
       'E-commerce backend built with Node.js, Express, and MongoDB. Features JWT authentication, product management, and order processing.',
@@ -230,7 +244,7 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex items-center gap-4 pt-4 border-t border-border">
+                <div className="flex items-center gap-4 pt-4 border-t border-border flex-wrap">
                   {project.github && (
                     <a
                       href={project.github}
@@ -240,6 +254,17 @@ export default function Projects() {
                     >
                       <FiGithub size={14} />
                       Code
+                    </a>
+                  )}
+                  {project.githubBackend && (
+                    <a
+                      href={project.githubBackend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-mono tracking-wider text-subtle hover:text-text transition-colors"
+                    >
+                      <FiGithub size={14} />
+                      Backend
                     </a>
                   )}
                   {project.live && (
