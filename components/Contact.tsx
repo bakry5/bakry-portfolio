@@ -83,7 +83,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
           >
             {sent ? (
-              <div className="p-8 rounded-none border-2 border-accent-2 bg-bg text-center">
+              <div className="p-8 rounded-none border border-accent-2 bg-bg text-center">
                 <div className="text-4xl mb-4">✅</div>
                 <h3 className="font-display text-xl font-bold text-text mb-2">Message Sent!</h3>
                 <p className="text-subtle">Thanks for reaching out. I&apos;ll reply as soon as possible.</p>
@@ -100,7 +100,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-none border-2 border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors"
+                      className="w-full px-4 py-3 rounded-none border border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors"
                     />
                   </div>
                   <div>
@@ -112,7 +112,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 rounded-none border-2 border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors"
+                      className="w-full px-4 py-3 rounded-none border border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors"
                     />
                   </div>
                 </div>
@@ -124,7 +124,7 @@ export default function Contact() {
                     value={form.subject}
                     onChange={handleChange}
                     placeholder="Project inquiry, freelance, etc."
-                    className="w-full px-4 py-3 rounded-none border-2 border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-4 py-3 rounded-none border border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors"
                   />
                 </div>
                 <div>
@@ -136,18 +136,18 @@ export default function Contact() {
                     required
                     rows={5}
                     placeholder="Tell me about your project..."
-                    className="w-full px-4 py-3 rounded-none border-2 border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-none border border-border bg-bg text-text placeholder-muted text-sm focus:outline-none focus:border-accent transition-colors resize-none"
                   />
                 </div>
                 {error && (
-                  <p className="text-sm text-accent bg-bg border-2 border-accent rounded-none px-4 py-2.5 font-mono">
+                  <p className="text-sm text-accent bg-bg border border-accent rounded-none px-4 py-2.5 font-mono">
                     {error}
                   </p>
                 )}
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-accent hover:bg-text disabled:opacity-70 text-bg font-bold font-mono uppercase tracking-wider text-sm rounded-none border-2 border-text transition-all duration-150"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-accent hover:bg-transparent hover:text-accent disabled:opacity-70 text-bg font-medium font-mono text-sm rounded-none border border-accent transition-colors duration-150"
                 >
                   {sending ? (
                     <>
@@ -172,7 +172,7 @@ export default function Contact() {
             transition={{ delay: 0.3 }}
             className="space-y-6"
           >
-            <div className="p-5 rounded-none border-2 border-border bg-bg flex items-center gap-4">
+            <div className="p-5 rounded-none border border-border bg-bg flex items-center gap-4">
               <div className="w-10 h-10 rounded-none bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
                 <FiMail size={18} />
               </div>
@@ -189,7 +189,7 @@ export default function Contact() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-5 rounded-none border-2 border-border bg-bg flex items-center gap-4 hover:border-green-500/40 transition-colors"
+              className="p-5 rounded-none border border-border bg-bg flex items-center gap-4 hover:border-green-500/40 transition-colors"
             >
               <div className="w-10 h-10 rounded-none bg-green-500/10 flex items-center justify-center text-green-500 flex-shrink-0">
                 <FaWhatsapp size={18} />
@@ -200,7 +200,7 @@ export default function Contact() {
               </div>
             </a>
 
-            <div className="p-5 rounded-none border-2 border-border bg-bg flex items-center gap-4">
+            <div className="p-5 rounded-none border border-border bg-bg flex items-center gap-4">
               <div className="w-10 h-10 rounded-none bg-accent-2/10 flex items-center justify-center text-accent-2 flex-shrink-0">
                 <FiMapPin size={18} />
               </div>
@@ -210,7 +210,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="p-5 rounded-none border-2 border-border bg-bg">
+            <div className="p-5 rounded-none border border-border bg-bg">
               <div className="text-xs font-mono text-muted uppercase tracking-wider mb-4">Find me on</div>
               <div className="space-y-3">
                 {socials.map(({ icon: Icon, label, href, username }) => (
@@ -221,7 +221,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-subtle hover:text-text transition-colors group"
                   >
-                    <div className="w-8 h-8 flex items-center justify-center rounded-none border-2 border-border bg-bg group-hover:border-accent/30 transition-colors">
+                    <div className="w-8 h-8 flex items-center justify-center rounded-none border border-border bg-bg group-hover:border-accent/30 transition-colors">
                       <Icon size={15} />
                     </div>
                     <div>

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-body: 'Newsreader', serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'IBM Plex Mono', monospace;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 }
 
 * {
@@ -17,69 +17,62 @@ html {
 }
 
 body {
-  background-color: #f1ede2;
-  color: #151310;
+  background-color: #0a0a0a;
+  color: #e4e4e7;
   overflow-x: hidden;
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #f1ede2; }
-::-webkit-scrollbar-thumb { background: #151310; border: 2px solid #f1ede2; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #232326; }
+::-webkit-scrollbar-thumb:hover { background: #e8a23c; }
 
 /* Selection */
-::selection { background: #e8391a; color: #f1ede2; }
+::selection { background: rgba(232, 162, 60, 0.25); color: #fff; }
 
-/* Paper grain overlay — replaces the generic dark "noise on gradient" look */
+/* Faint texture, kept very subtle — this is a flat, technical surface, not a
+   printed or glowing one */
 .noise::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.015;
   z-index: 9999;
-  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* No glow/blur — flat ink marks instead of soft shadows */
-.glow-accent { box-shadow: 4px 4px 0 0 #e8391a; }
-.glow-accent-2 { box-shadow: 4px 4px 0 0 #1f3b57; }
+/* No glow, no gradient, no soft shadow — just a 1px accent underline where
+   emphasis is needed */
+.glow-accent { box-shadow: inset 2px 0 0 0 #e8a23c; }
+.glow-accent-2 { box-shadow: inset 2px 0 0 0 #5b8ba6; }
 
-/* Solid ink headline + accent-marker headline — no gradient text */
 .text-gradient {
-  color: #151310;
+  color: #e4e4e7;
 }
 .text-gradient-2 {
-  color: #151310;
-  text-decoration: underline;
-  text-decoration-color: #e8391a;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 8px;
+  color: #e8a23c;
 }
 
-/* Ruled grid — visible print margins, not a soft glowing grid */
+/* Sparse dot grid — a code-editor gutter feel, not a glowing ruled sheet */
 .grid-pattern {
-  background-image:
-    linear-gradient(rgba(21,19,16,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21,19,16,0.08) 1px, transparent 1px);
-  background-size: 64px 64px;
+  background-image: radial-gradient(rgba(228,228,231,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-/* Orb blobs are switched off entirely — the soft glowing-gradient-blob
-   is the single most recognizable "AI portfolio" tell, so it's removed
-   rather than recolored. */
+/* Orbs stay switched off — no glowing blobs in this theme either */
 .orb {
   display: none;
 }
 
-/* Card hover — hard offset shadow (print stamp), not a lift+glow */
+/* Card hover — a clean border/background shift, no lift, no offset shadow */
 .card-hover {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 .card-hover:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 0 0 #151310;
+  border-color: #e8a23c;
+  background-color: #111113;
 }
 
 /* Underline animate */
@@ -92,9 +85,9 @@ body {
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: #e8391a;
-  transition: width 0.25s ease;
+  height: 1px;
+  background: #e8a23c;
+  transition: width 0.2s ease;
 }
 .link-underline:hover::after { width: 100%; }
 
