@@ -29,15 +29,14 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-bg border-b-2 border-border'
+            ? 'bg-bg border-b border-border'
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="font-display font-bold text-xl tracking-tight">
-            <span className="text-gradient-2">Bakry</span>
-            <span className="text-subtle">.</span>
+          <a href="#" className="font-display font-medium text-lg tracking-tight text-text">
+            <span className="text-accent">&gt;</span> bakry
           </a>
 
           {/* Desktop Nav */}
@@ -57,7 +56,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="#contact"
-              className="px-4 py-2 text-sm font-bold font-mono uppercase tracking-wider bg-accent hover:bg-text text-bg rounded-none transition-all duration-150 border-2 border-text"
+              className="px-4 py-2 text-sm font-medium font-mono bg-accent hover:bg-transparent hover:text-accent text-bg rounded-none transition-colors duration-150 border border-accent"
             >
               Hire Me
             </a>
@@ -82,7 +81,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-bg border-t-2 border-border flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-bg border-t border-border flex flex-col items-center justify-center gap-8"
           >
             {links.map((link, i) => (
               <motion.a
@@ -91,7 +90,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07 }}
-                className="font-display text-3xl font-bold text-subtle hover:text-text transition-colors"
+                className="font-display text-2xl font-medium text-subtle hover:text-accent transition-colors"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -102,7 +101,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="mt-4 px-8 py-3 bg-accent text-bg rounded-none font-mono font-bold uppercase tracking-wider border-2 border-text"
+              className="mt-4 px-8 py-3 bg-accent text-bg rounded-none font-mono font-medium border border-accent"
               onClick={() => setOpen(false)}
             >
               Hire Me

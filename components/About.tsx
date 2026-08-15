@@ -87,7 +87,7 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
-                className="p-6 rounded-none border-2 border-border bg-bg card-hover group"
+                className="p-6 rounded-none border border-border bg-bg card-hover group"
               >
                 <div className="font-display text-4xl font-extrabold text-gradient-2 mb-2 group-hover:scale-105 transition-transform duration-300">
                   {value}
@@ -97,7 +97,7 @@ export default function About() {
             ))}
 
             {/* Visual card */}
-            <div className="col-span-2 p-6 rounded-none border-2 border-accent bg-bg relative overflow-hidden">
+            <div className="col-span-2 p-6 rounded-none border border-accent bg-bg relative overflow-hidden">
               <div className="orb w-[150px] h-[150px] bg-accent/20 top-[-40px] right-[-40px]" />
               <div className="relative">
                 <div className="text-xs font-mono text-accent mb-3 tracking-wider">CURRENTLY</div>

@@ -10,7 +10,7 @@ export default function WhatsappButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-none border-2 border-text bg-green-600 hover:bg-text text-bg flex items-center justify-center transition-all duration-150 hover:-translate-y-1 hover:translate-x-1"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-none border border-border bg-green-600 hover:bg-green-500 text-bg flex items-center justify-center transition-colors duration-150"
     >
       <FaWhatsapp size={26} />
     </a>

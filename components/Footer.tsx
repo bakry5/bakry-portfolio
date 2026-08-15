@@ -9,7 +9,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t-2 border-border py-10 px-6">
+    <footer className="border-t border-border py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="font-display font-bold text-lg">
           <span className="text-gradient-2">Bakry</span>
@@ -29,7 +29,7 @@ export default function Footer() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-none border-2 border-border text-subtle hover:text-bg hover:bg-text hover:border-text transition-all duration-150"
+              className="w-8 h-8 flex items-center justify-center rounded-none border border-border text-subtle hover:text-bg hover:bg-text hover:border-text transition-all duration-150"
             >
               <Icon size={14} />
             </a>

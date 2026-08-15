@@ -13,7 +13,7 @@ import {
 const skillGroups = [
   {
     label: 'Frontend',
-    color: '#e8391a',
+    color: '#e8a23c',
     skills: [
       { name: 'React.js', icon: SiReact, level: 95 },
       { name: 'Next.js', icon: SiNextdotjs, level: 90 },
@@ -27,7 +27,7 @@ const skillGroups = [
   },
   {
     label: 'Backend',
-    color: '#1f3b57',
+    color: '#5b8ba6',
     skills: [
       { name: 'Node.js', icon: SiNodedotjs, level: 88 },
       { name: 'Express.js', icon: SiExpress, level: 85 },
@@ -37,7 +37,7 @@ const skillGroups = [
   },
   {
     label: 'Tools & DevOps',
-    color: '#8a6f47',
+    color: '#7a8577',
     skills: [
       { name: 'Git & GitHub', icon: SiGit, level: 90 },
       { name: 'Postman', icon: SiPostman, level: 88 },
@@ -123,7 +123,7 @@ export default function Skills() {
                   <div
                     key={name}
                     title={name}
-                    className="w-8 h-8 flex items-center justify-center rounded-none border-2 border-border bg-bg text-subtle hover:text-bg hover:bg-text hover:border-text transition-all duration-150 cursor-default"
+                    className="w-8 h-8 flex items-center justify-center rounded-none border border-border bg-bg text-subtle hover:text-bg hover:bg-text hover:border-text transition-all duration-150 cursor-default"
                   >
                     <Icon size={15} />
                   </div>

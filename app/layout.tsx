@@ -1,25 +1,18 @@
 import type { Metadata } from 'next'
-import { Bricolage_Grotesque, Newsreader, JetBrains_Mono } from 'next/font/google'
+import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google'
 import './globals.css'
 import WhatsappButton from '../components/WhatsappButton'
 
-const bricolage = Bricolage_Grotesque({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
 })
 
-const newsreader = Newsreader({
+const plexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-})
-
-const jetBrains = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  weight: ['400', '500', '700'],
+  weight: ['300', '400', '500', '600'],
 })
 
 export const metadata: Metadata = {
@@ -29,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${newsreader.variable} ${jetBrains.variable}`}>
+    <html lang="en" className={`${plexMono.variable} ${plexSans.variable}`}>
       <body className="bg-bg text-text font-body antialiased">
         {children}
         <WhatsappButton />

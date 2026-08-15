@@ -19,40 +19,40 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden grid-pattern border-b-2 border-border">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden grid-pattern border-b border-border">
       {/* Orbs are switched off via CSS (see .orb in globals.css) — kept as no-ops */}
       <div className="orb w-[500px] h-[500px] bg-accent/20 top-[-100px] left-[-150px]" />
       <div className="orb w-[400px] h-[400px] bg-accent-2/15 bottom-[-80px] right-[-100px]" />
       <div className="orb w-[200px] h-[200px] bg-accent-3/10 top-[40%] right-[10%]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 w-full pt-28 pb-16">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-10 w-full pt-28 pb-16">
         <motion.div variants={stagger} initial="hidden" animate="show">
-          {/* Docket label */}
-          <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
-            <span className="font-mono text-xs tracking-[0.25em] uppercase text-accent border-2 border-accent px-2 py-1">Docket №01</span>
-            <span className="h-px flex-1 bg-border max-w-[120px]" />
-            <span className="font-mono text-xs tracking-[0.2em] uppercase text-muted">Mansoura, EG</span>
+          {/* Prompt path */}
+          <motion.div variants={fadeUp} className="flex items-center gap-2 mb-6 text-sm font-mono text-muted">
+            <span className="text-accent">~/mohamed</span>
+            <span>$</span>
+            <span className="text-subtle">whoami</span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="font-display font-extrabold text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8 max-w-4xl"
+            className="font-display font-semibold text-4xl md:text-6xl leading-[1.15] tracking-tight mb-6"
           >
-            <span className="block text-text">Full Stack</span>
-            <span className="block text-gradient-2">Developer.</span>
+            <span className="block text-text">Full Stack Developer</span>
+            <span className="block text-gradient-2">
+              building with React, Node &amp; MongoDB
+              <span className="inline-block w-[0.55ch] h-[1em] bg-accent align-middle ml-1 animate-pulse" />
+            </span>
           </motion.h1>
 
-          {/* Subheadline — offset to the right, editorial column width */}
+          {/* Subheadline */}
           <motion.p
             variants={fadeUp}
-            className="md:ml-auto max-w-xl text-subtle font-body text-lg md:text-xl leading-relaxed mb-10 border-l-2 border-accent pl-5"
+            className="max-w-xl text-subtle font-body text-base md:text-lg leading-relaxed mb-10"
           >
-            I craft fast, scalable web products using{' '}
-            <span className="text-text font-semibold not-italic">React</span>,{' '}
-            <span className="text-text font-semibold not-italic">Next.js</span>,{' '}
-            <span className="text-text font-semibold not-italic">Node.js</span> &amp;{' '}
-            <span className="text-text font-semibold not-italic">MongoDB</span>. From pixel-perfect UIs to robust APIs.
+            I ship fast, well-structured web apps — from pixel-accurate UIs to
+            REST APIs that hold up in production. MERN stack, mostly.
           </motion.p>
 
           {/* Tech pills */}
@@ -60,7 +60,7 @@ export default function Hero() {
             {['React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB'].map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-xs font-mono border-2 border-border bg-surface text-subtle rounded-none"
+                className="px-3 py-1 text-xs font-mono border border-border bg-surface text-subtle rounded-none"
               >
                 {tech}
               </span>
@@ -68,23 +68,23 @@ export default function Hero() {
           </motion.div>
 
           {/* CTAs */}
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4 mb-14">
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3 mb-14">
             <a
               href="#projects"
-              className="px-8 py-3.5 bg-accent hover:bg-text text-bg font-bold font-mono uppercase tracking-wider text-sm rounded-none border-2 border-text transition-all duration-150 hover:-translate-y-1 hover:translate-x-1"
+              className="px-6 py-3 bg-accent hover:bg-transparent hover:text-accent text-bg font-medium font-mono text-sm rounded-none border border-accent transition-colors duration-150"
             >
-              View My Work
+              View my work
             </a>
             <a
               href="#contact"
-              className="px-8 py-3.5 border-2 border-border hover:border-accent bg-bg text-text font-bold font-mono uppercase tracking-wider text-sm rounded-none transition-all duration-150 hover:-translate-y-1 hover:translate-x-1"
+              className="px-6 py-3 border border-border hover:border-accent hover:text-accent bg-transparent text-text font-medium font-mono text-sm rounded-none transition-colors duration-150"
             >
-              Get In Touch
+              Get in touch
             </a>
           </motion.div>
 
           {/* Socials */}
-          <motion.div variants={fadeUp} className="flex items-center gap-4">
+          <motion.div variants={fadeUp} className="flex items-center gap-3">
             {socials.map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
@@ -92,9 +92,9 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="w-10 h-10 flex items-center justify-center rounded-none border-2 border-border bg-bg text-subtle hover:text-bg hover:bg-text hover:border-text transition-all duration-150"
+                className="w-9 h-9 flex items-center justify-center rounded-none border border-border bg-transparent text-subtle hover:text-accent hover:border-accent transition-colors duration-150"
               >
-                <Icon size={18} />
+                <Icon size={16} />
               </a>
             ))}
           </motion.div>
